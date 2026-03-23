@@ -38,7 +38,7 @@ def home():
 def get_destinatons():
     destinations = Destination.query.all() # fetch every row in db
     
-    return jsonify([destination.to_dict()] for destination in destinations)
+    return jsonify([destination.to_dict() for destination in destinations])
 
 # https://www.worldtour.io/destinations/2
 @app.route("/destinations/<int:destination_id>", methods=["GET"])
